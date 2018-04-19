@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/EhsanErshadi/ElectronSample/issues"
   },
-  "homepage": "https://github.com/EhsanErshadi/ElectronSample#readme"
+  "homepage": "https://github.com/EhsanErshadi/ElectronSample#readme",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  }
 }
