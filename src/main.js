@@ -3,6 +3,7 @@ const countdown = require('./countdown');
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const ipc = electron.ipcMain;
 
 let mainWindow;
 
@@ -18,6 +19,12 @@ app.on('ready', _ => {
         console.log("closed");
         mainWindow = null;
     });
+});
 
-    countdown();
+ipc.on('countdown_start', _ => {
+    console.log('p1, event countdowm');
+    countdown(count => {
+        console.log('p3, inside counth lambda method');
+        mainWindow.webContents.send('countdown', count);
+    });
 });
